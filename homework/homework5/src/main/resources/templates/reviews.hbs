@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+<table>
+  <tr>
+    <th>Rating</th>
+    <th>Comment</th>
+  </tr>
+  {{#each reviewList}}
+  <tr>
+    <th class='review'>{{ rating }}</th>
+    <th class='review'>{{ comment }}</th>
+  </tr>
+  {{/each}}
+</table>
+
+
+
+
+<form action="/courses/{{id}}/reviews" method="post" onsubmit="return validateReview();">
+  <input type="number" placeholder="0" name="rating" id="rating" >
+  <input type="text" placeholder="comment" name="comment" />
+  <button>submit</button>
+</form>
+
+{{/partial}}
+
+{{> base.hbs}}

@@ -1,0 +1,37 @@
+@startuml
+Posting "0..n" -- User
+User "Buyer/1..n"--"Seller/1..n" User: Make deal with
+class User {
+  {field} -id: int
+  {field} -name : string
+  {field} -password : string
+  {field} -email : string
+  {field} -dinning_dolor : Int
+  {field} -contact: string
+  {field} -rating: float
+  {method} - register(string name, string password, string email) : void
+  {method} - login(string name, string password): void
+  {method} - create_post(): void
+  {method} - delete_post(): void
+  {method} - report(Posting posting, String comment): void
+  {method} - rate(Posting posting) : void
+  ' todo: add more field and method
+}
+
+class Posting {
+    {field} -Buy/Sell: Bool
+    {field} -posterid : String
+    {field} -pickerid: String
+    {field} -Poster: User
+    {field} -Picker: User
+    {field} -amount: Float
+    {field} -exchange_rate: Float 
+    {field} -time_limit : Datetime
+    {field} -meeting_place : String
+    {field} -additional_comments: String
+    {field} -status : String
+    {field} - rating: Int
+}
+' todo
+
+@enduml

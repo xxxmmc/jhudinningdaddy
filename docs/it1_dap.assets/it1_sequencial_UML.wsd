@@ -1,0 +1,20 @@
+@startuml
+participant Buyer
+participant Seller
+participant Platform
+Seller  -> Platform: Publish
+Platform -> Platform: Update
+Buyer -> Platform: Browse
+Platform -> Buyer: Return information
+
+Buyer -> Platform: Request order
+Platform -> Buyer: Request payment
+Buyer -> Platform: Pay
+Platform -> Seller: Request transaction
+
+Seller -> Buyer: Chat
+Seller -> Platform: Update transaction information
+Platform -> Buyer: Request transaction confirmation
+Buyer -> Platform: Confirm transaction
+Platform -> Seller: Pay
+@enduml
